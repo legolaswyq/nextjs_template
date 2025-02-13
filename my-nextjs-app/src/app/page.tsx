@@ -1,5 +1,6 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import { siteConfig } from '@/config/site';
@@ -36,12 +37,17 @@ export default function Home() {
               {siteConfig.description}
             </p>
             <div className="space-x-4">
-              <Link href="/docs">
-                <Button>Get Started</Button>
-              </Link>
-              <Link href={siteConfig.links.github}>
-                <Button variant="secondary">View on GitHub</Button>
-              </Link>
+              <Button
+                onClick={() => window.location.href = '/docs'}
+              >
+                Get Started
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={() => window.open(siteConfig.links.github, '_blank')}
+              >
+                View on GitHub
+              </Button>
             </div>
           </div>
         </div>
@@ -80,9 +86,11 @@ export default function Home() {
             <p className="text-gray-500 md:text-xl max-w-[600px]">
               Join us and start building amazing applications with our modern tech stack.
             </p>
-            <Link href="/docs">
-              <Button>Start Building</Button>
-            </Link>
+            <Button
+              onClick={() => window.location.href = '/docs'}
+            >
+              Start Building
+            </Button>
           </div>
         </div>
       </section>

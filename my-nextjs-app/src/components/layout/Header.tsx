@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Button from '../ui/Button';
@@ -12,8 +14,12 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex items-center space-x-4">
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/about" className="text-gray-600 hover:text-gray-900">
+            About
+          </Link>
+          <Link href="/contact" className="text-gray-600 hover:text-gray-900">
+            Contact
+          </Link>
           <Button variant="primary">Sign In</Button>
         </div>
       </nav>
